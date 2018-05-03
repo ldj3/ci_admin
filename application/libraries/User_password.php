@@ -7,7 +7,7 @@
  * 微信模板发送消息类。
  * 说明：openid用户必须关注推送的公众号
  */
-class Wechat_message  {
+class User_password  {
     
     public function best_cost () 
     {

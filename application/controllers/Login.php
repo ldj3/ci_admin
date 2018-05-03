@@ -31,36 +31,9 @@ class Login extends My_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$data['base_url'] = base_url();
 		$data['title'] = '用户登录';
-		$data['ower'] = OWER;
+		$data['footer'] = 'Powered by © 梁道靖';
 		$this->load->view('login/login',$data);
-	}
-
-	/**
-	 * 
-	 * 注册页面
-	 */
-	public function regist()
-	{
-		$this->load->helper('url');
-		$data['base_url'] = base_url();
-		$data['title'] = '用户注册';
-		$data['ower'] = OWER;
-		$this->load->view('login/reg',$data);
-	}
-
-	/**
-	 * 
-	 * 忘记密码页面
-	 */
-	public function getpass()
-	{
-		$this->load->helper('url');
-		$data['base_url'] = base_url();
-		$data['title'] = '找回密码';
-		$data['ower'] = OWER;
-		$this->load->view('login/getpass',$data);
 	}
 
 	/**
