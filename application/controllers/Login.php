@@ -32,7 +32,6 @@ class Login extends My_Controller {
 	{
 		$this->load->helper('url');
 		$data['title'] = '用户登录';
-		$data['footer'] = 'Powered by © 梁道靖';
 		$this->load->view('login/login',$data);
 	}
 
@@ -51,22 +50,45 @@ class Login extends My_Controller {
 		$post_username = $post_data['username'];
 		$post_password = $post_data['password'];
 
+		//验证数据是否为空
 		if (empty($post_data) or empty($post_password))
 		{
-			$data['code'] = '0';
+			$data['code'] = '9';
 			$data['msg'] = '账号密码不能为空!';
 			echo json_encode($data);exit;
 		}
 
-		$name_value = $this->db->where('name',$post_username)->from('administrators')->get()->row_array();
-		$phone_value = $this->db->where('phone',$post_username)->from('administrators')->get()->row_array();
+		//验证是否手机号登录
+		if (preg_match("/^1[34578]\d{9}$/",$post_username)) {
+			$data_value = $this->db->where('phone',$post_username)->from('administrators')->get()->row_array();
+			if (empty($data_value)) {
+				$data['code'] = '2';
+				$data['msg'] = '手机号码不存在!';
+				echo json_encode($data);exit;
+			}
+		}else {
+			$data_value = $this->db->where('name',$post_username)->from('administrators')->get()->row_array();
+			if (empty($data_value)) {
+				$data['code'] = '1';
+				$data['msg'] = '账号不存在!';
+				echo json_encode($data);exit;
+			}
+		}
 
-		if (empty($name_value) or empty($phone_value)) {
-			$data['code'] = '1';
-			$data['msg'] = '账号不存在!';
+		//验证密码
+		if (password_verify($post_password,$data_value['password'])) {
+			$data['code'] = '0';
+
+			//开启session
+			
+			echo json_encode($data);
+		}else {
+			$data['code'] = '3';
+			$data['msg'] = '密码错误!';
 			echo json_encode($data);exit;
 		}
-		print_r($name_value);exit;
+
+		
 
 
 		

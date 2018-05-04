@@ -85,4 +85,4 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-defined('OWER')                OR define('OWER','http://localhost/ci_admin/ci_admin/index.php');
+defined('OWER')                OR define('OWER','Powered by © 梁道靖');//网站拥有者

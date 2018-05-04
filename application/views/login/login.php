@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title><?php echo $title; ?></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <base href = "<?php OWER;?>"/>
+    <base href = "<?php base_url();?>"/>
     <meta name="Keywords" content="网站关键词">
     <meta name="Description" content="网站介绍">
     <link rel="stylesheet" href="./public/login/css/base.css">
@@ -52,7 +52,7 @@
                 </p>
             </div>
             <button class="lang-btn off log-btn">登录</button>
-            <p class="right"><?php echo $footer; ?></p>
+            <p class="right"><?php echo OWER; ?></p>
         </div>
     </div>
 </div>

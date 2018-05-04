@@ -5,8 +5,7 @@ body{
 .wrap{
     box-sizing: border-box;
     height: 100vh;
-    background: url("../img/bj.jpg") no-repeat center;
-    background-size: auto 100vh;
+    background: url("../img/80fc272376dfc0601454e846885bd6e2.jpg") no-repeat center;
     position:  relative;
 }
 .form-data{
