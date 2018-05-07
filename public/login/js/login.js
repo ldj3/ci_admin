@@ -180,7 +180,7 @@ $(function() {
                         data: ldata,
                         success: function(data) {
                             if (data.code == '0') {
-                                window.location.href = 'http://www.jb51.net';
+                                window.location.href = 'http://localhost/ci_admin/index.php/home';
                             } else if (data.code == '2') {
                                 $(".log-btn").off('click').addClass("off");
                                 $('.num-err').removeClass('hide').find('em').text(data.msg);

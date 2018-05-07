@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends My_Controller {
+class Login extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,6 +22,9 @@ class Login extends My_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->database();
+        $this->load->helper('url');
+		$this->load->library('session');
 	}
 
 	/**
@@ -30,7 +33,7 @@ class Login extends My_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
+		$data['base_url'] = base_url();
 		$data['title'] = '用户登录';
 		$this->load->view('login/login',$data);
 	}
@@ -44,6 +47,8 @@ class Login extends My_Controller {
 		
 		//加载加密
 		$this->load->library('user_password');
+		//加载用户seesion
+		$this->load->helper("session");
 
 		//获取提交数据
 		$post_data = $this->input->post();
@@ -79,18 +84,28 @@ class Login extends My_Controller {
 		if (password_verify($post_password,$data_value['password'])) {
 			$data['code'] = '0';
 
-			//开启session
-			
-			echo json_encode($data);
+			//验证成功，开启session
+			set_customer($data_value);
+			echo json_encode($data);exit;
 		}else {
 			$data['code'] = '3';
 			$data['msg'] = '密码错误!';
 			echo json_encode($data);exit;
 		}
-
-		
-
-
-		
+	
 	}
+
+	/**
+	 * 
+	 * 退出登录
+	 */
+	public function log_out()
+	{
+		$this->session->sess_destroy();
+		$data['base_url'] = base_url();
+		$data['title'] = '用户登录';
+		$this->load->view('login/login',$data);
+
+	}
+
 }

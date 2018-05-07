@@ -16,6 +16,11 @@ abstract class My_Controller extends CI_Controller
 
         //加载并初始化数据库类
         $this->load->database();
+        $this->load->helper('url');
+        $this->load->library('session');
+        if (empty($_SESSION['user_name'])) {
+            redirect('login/index');
+        }
     }
 
 }

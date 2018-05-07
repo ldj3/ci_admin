@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title><?php echo $title; ?></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <base href = "<?php base_url();?>"/>
+    <base href = "<?php echo $base_url;?>"/>
     <meta name="Keywords" content="网站关键词">
     <meta name="Description" content="网站介绍">
     <link rel="stylesheet" href="./public/login/css/base.css">
@@ -19,14 +19,12 @@
             <a href="javascript:void(0)"><img src="./public/login/img/logo.png" class="head-logo"></a>
             <div class="form1">
                 <p class="p-input pos">
-                    <label for="num">手机号/账号</label>
-                    <input type="text" id="num">
+                    <input type="text" id="num" placeholder="手机号/账号" >
                     <span class="tel-warn num-err hide"><em>账号或密码错误，请重新输入</em><i class="icon-warn"></i></span>
                 </p>
                 <p class="p-input pos">
-                    <label for="pass">请输入密码</label>
                     <input type="password" style="display:none"/>
-                    <input type="password" id="pass" autocomplete="new-password">
+                    <input type="password" id="pass" autocomplete="new-password" placeholder="请输入密码">
                     <span class="tel-warn pass-err hide"><em>账号或密码错误，请重新输入</em><i class="icon-warn"></i></span>
                 </p>
                 <p class="p-input pos code hide">
