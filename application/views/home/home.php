@@ -245,7 +245,6 @@
 					<ul class="sub">
 						<li><a class="" href="ui_elements_general.html">General</a></li>
 						<li><a class="" href="ui_elements_buttons.html">Buttons</a></li>
-
 						<li><a class="" href="ui_elements_tabs_accordions.html">Tabs & Accordions</a></li>
 						<li><a class="" href="ui_elements_typography.html">Typography</a></li>
 						<li><a class="" href="tree_view.html">Tree View</a></li>

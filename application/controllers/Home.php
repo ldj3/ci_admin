@@ -26,7 +26,11 @@ class Home extends My_Controller {
     {
 		$data['base_url'] = base_url();
 		$data['site_url'] = site_url();
-        $data['title'] = '后台首页';
+
+		//获取侧边导航栏数据
+		$side_bar = $this->db->select('first_sidebar')->from('sidebar')->get()->result_array();
+		print_r($side_bar);exit;
+		$data['title'] = '后台首页';
 		$this->load->view('home/home',$data);
     }
 
