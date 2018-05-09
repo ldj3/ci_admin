@@ -21,6 +21,8 @@ abstract class My_Controller extends CI_Controller
         if (empty($_SESSION['user_name'])) {
             redirect('login/index');
         }
+        
+        
     }
 
 }
