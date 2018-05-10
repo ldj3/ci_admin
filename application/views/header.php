@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="utf-8" />
-	<title> <?php echo $title; ?></title>
 	<base href = "<?php echo $base_url;?>"/>
 	<link href="public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="public/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
@@ -11,11 +10,15 @@
 	<link href="public/css/style_responsive.css" rel="stylesheet" />
 	<link href="public/css/style_default.css" rel="stylesheet" id="style_color" />
 	<link href="public/assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="public/assets/uniform/css/uniform.default.css" />
+	<link href="public/assets/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
 	<link href="public/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
 	<link href="public/assets/jqvmap/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+
+
 </head>
 <body class="fixed-top">
+
+	<!-- 头部 -->
     <div id="header" class="navbar navbar-inverse navbar-fixed-top">
 		<!-- BEGIN TOP NAVIGATION BAR -->
 		<div class="navbar-inner">
@@ -200,41 +203,46 @@
 			</div>
 		</div>
 		<!-- END TOP NAVIGATION BAR -->
-    </div>
-    <div id="footer">
-		2013 &copy; Admin Lab Dashboard. 更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a>
-		<div class="span pull-right">
-			<span class="go-top"><i class="icon-arrow-up"></i></span>
+	</div>
+	<!-- 内容 -->
+	<div id="container" class="row-fluid">
+		<!-- BEGIN SIDEBAR -->
+		<div id="sidebar" class="nav-collapse collapse">
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+			<div class="sidebar-toggler hidden-phone"></div>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+			<div class="navbar-inverse">
+				<form class="navbar-search visible-phone">
+					<input type="text" class="search-query" placeholder="Search" />
+				</form>
+			</div>
+			<!-- END RESPONSIVE QUICK SEARCH FORM -->
+			<!-- BEGIN SIDEBAR MENU -->
+			<ul class="sidebar-menu">
+
+                <!-- 遍历第一菜单 -->
+                <?php foreach ($side_bar as $item): ?>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+					    <span class="icon-box"><i class="<?php echo $item['icon']; ?>"></i></span> <?php echo $item['sidebar_name'];?>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub">
+                        <?php foreach ($item['seconde_name'] as $seconde_side): ?>
+                        <!-- 遍历第二菜单 -->
+                        <li class="">
+                            <a class="" href="<?php echo $site_url.'/'.$seconde_side['href'] ?>">
+                                <?php echo $seconde_side['sidebar_name'];?>
+                            </a>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+				</li>
+				<?php endforeach; ?>
+				
+				<li><a class="" href="login/log_out"><span class="icon-box"><i class="icon-user"></i></span> Login Page</a></li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
 		</div>
-    </div>
-</body>
-    <script src="public/js/jquery-1.8.3.min.js"></script>
-	<script src="public/assets/jquery-slimscroll/jquery-ui-1.9.2.custom.min.js"></script>
-	<script src="public/assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="public/assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
-	<script src="public/assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="public/js/jquery.blockui.js"></script>
-	<script src="public/js/jquery.cookie.js"></script>
-	<script src="public/assets/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
-	<script src="public/assets/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
-	<script src="public/assets/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
-	<script src="public/assets/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
-	<script src="public/assets/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
-	<script src="public/assets/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
-	<script src="public/assets/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
-	<script src="public/assets/jquery-knob/js/jquery.knob.js"></script>
-	<script src="public/assets/flot/jquery.flot.js"></script>
-	<script src="public/assets/flot/jquery.flot.resize.js"></script>
-    <script src="public/assets/flot/jquery.flot.pie.js"></script>
-    <script src="public/assets/flot/jquery.flot.stack.js"></script>
-    <script src="public/assets/flot/jquery.flot.crosshair.js"></script>
-	<script src="public/js/jquery.peity.min.js"></script>
-	<script type="text/javascript" src="public/assets/uniform/jquery.uniform.min.js"></script>
-	<script src="public/js/scripts.js"></script>
-	<script>
-		jQuery(document).ready(function() {
-			App.setMainPage(true);
-			App.init();
-		});
-    </script>
-    </html>

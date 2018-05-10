@@ -8,59 +8,10 @@
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="fixed-top">
 	<!-- BEGIN HEADER -->
 	
     
-	<div id="container" class="row-fluid">
-		<!-- BEGIN SIDEBAR -->
-		<div id="sidebar" class="nav-collapse collapse">
-			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-			<div class="sidebar-toggler hidden-phone"></div>
-			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 
-			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-			<div class="navbar-inverse">
-				<form class="navbar-search visible-phone">
-					<input type="text" class="search-query" placeholder="Search" />
-				</form>
-			</div>
-			<!-- END RESPONSIVE QUICK SEARCH FORM -->
-			<!-- BEGIN SIDEBAR MENU -->
-			<ul class="sidebar-menu">
-
-                <!-- 遍历第一菜单 -->
-                <?php foreach ($side_bar as $item): ?>
-				<li class="has-sub">
-					<a href="javascript:;" class="">
-					    <span class="icon-box"><i class="<?php echo $item['icon']; ?>"></i></span> <?php echo $item['sidebar_name'];?>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <?php foreach ($item['seconde_name'] as $seconde_side): ?>
-
-                        <!-- 遍历第二菜单 -->
-                        <li class="">
-                            <a class="" href="<?php echo $seconde_side['href'] ?>">
-                                <?php echo $seconde_side['sidebar_name'];?>
-                            </a>
-                        </li>
-
-                        <?php endforeach; ?>
-
-                    </ul>
-				</li>
-                <?php endforeach; ?>
-
-
-
-				
-				<li><a class="" href="login/log_out"><span class="icon-box"><i class="icon-user"></i></span> Login Page</a></li>
-			</ul>
-			<!-- END SIDEBAR MENU -->
-		</div>
 		<!-- END SIDEBAR -->
 		<!-- BEGIN PAGE -->
 		<div id="main-content">
@@ -904,7 +855,3 @@
 			<!-- END PAGE CONTAINER-->
 		</div>
 		<!-- END PAGE -->
-	</div>
-</body>
-<!-- END BODY -->
-</html>

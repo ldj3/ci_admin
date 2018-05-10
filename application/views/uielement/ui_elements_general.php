@@ -1,351 +1,39 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if IE 10]> <html lang="en" class="ie10"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-	<title>General</title>
+    <title>General</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
-	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<link href="css/style.css" rel="stylesheet" />
-	<link href="css/style_responsive.css" rel="stylesheet" />
-	<link href="css/style_default.css" rel="stylesheet" id="style_color" />
-
-	<link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
-	<link rel="stylesheet" type="text/css" href="assets/uniform/css/uniform.default.css" />
-	<link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
-
-    <!-- jquery slider -->
-    <link rel="stylesheet" href="assets/jslider/css/jslider.css" type="text/css">
-    <link rel="stylesheet" href="assets/jslider/css/jslider.blue.css" type="text/css">
-    <link rel="stylesheet" href="assets/jslider/css/jslider.plastic.css" type="text/css">
-    <link rel="stylesheet" href="assets/jslider/css/jslider.round.css" type="text/css">
-    <link rel="stylesheet" href="assets/jslider/css/jslider.round.plastic.css" type="text/css">
-    <!-- end -->
-
-
-
+	<link rel="stylesheet" type="text/css" href="public/assets/gritter/css/jquery.gritter.css" />
+	<link rel="stylesheet" type="text/css" href="public/assets/uniform/css/uniform.default.css" />
+	<link rel="stylesheet" type="text/css" href="public/assets/fancybox/source/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="public/assets/jslider/css/jslider.css" />
+    <link rel="stylesheet" type="text/css" href="public/assets/jslider/css/jslider.blue.css" />
+    <link rel="stylesheet" type="text/css" href="public/assets/jslider/css/jslider.plastic.css" />
+    <link rel="stylesheet" type="text/css" href="public/assets/jslider/css/jslider.round.css" />
+    <link rel="stylesheet" type="text/css" href="public/assets/jslider/css/jslider.round.plastic.css" />
+    <script type="text/javascript" src="public/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="public/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="public/js/jquery.blockui.js"></script>
+	<script type="text/javascript" src="public/assets/uniform/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="public/assets/gritter/js/jquery.gritter.js"></script>
+	<script type="text/javascript" src="public/js/jquery.pulsate.min.js"></script>
+	<script type="text/javascript" src="public/assets/fancybox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="public/assets/jslider/js/jshashtable-2.1_src.js"></script>
+    <script type="text/javascript" src="public/assets/jslider/js/jquery.numberformatter-1.2.3.js"></script>
+    <script type="text/javascript" src="public/assets/jslider/js/tmpl.js"></script>
+    <script type="text/javascript" src="public/assets/jslider/js/jquery.dependClass-0.1.js"></script>
+    <script type="text/javascript" src="public/assets/jslider/js/draggable-0.1.js"></script>
+    <script type="text/javascript" src="public/assets/jslider/js/jquery.slider.js"></script>
+	<script type="text/javascript" src="public/js/scripts.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+			// initiate layout and plugins
+			App.init();
+		});
+	</script>
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="fixed-top">
-	<!-- BEGIN HEADER -->
-    <div id="header" class="navbar navbar-inverse navbar-fixed-top">
-        <!-- BEGIN TOP NAVIGATION BAR -->
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <!-- BEGIN LOGO -->
-                <a class="brand" href="index.html">
-                    <img src="img/logo.png" alt="Admin Lab" />
-                </a>
-                <!-- END LOGO -->
-                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-                <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="arrow"></span>
-                </a>
-                <!-- END RESPONSIVE MENU TOGGLER -->
-                <div id="top_menu" class="nav notify-row">
-                    <!-- BEGIN NOTIFICATION -->
-                    <ul class="nav top-menu">
-                        <!-- BEGIN SETTINGS -->
-                        <li class="dropdown">
-                            <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Settings">
-                                <i class="icon-cog"></i>
-                            </a>
-                        </li>
-                        <!-- END SETTINGS -->
-                        <!-- BEGIN INBOX DROPDOWN -->
-                        <li class="dropdown" id="header_inbox_bar">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-envelope-alt"></i>
-                                <span class="badge badge-important">5</span>
-                            </a>
-                            <ul class="dropdown-menu extended inbox">
-                                <li>
-                                    <p>You have 5 new messages</p>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="photo"><img src="img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Dulal Khan</span>
-									<span class="time">Just now</span>
-									</span>
-									<span class="message">
-									    Hello, this is an example messages please check
-									</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="photo"><img src="img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Rafiqul Islam</span>
-									<span class="time">10 mins</span>
-									</span>
-									<span class="message">
-									 Hi, Mosaddek Bhai how are you ?
-									</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="photo"><img src="img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Sumon Ahmed</span>
-									<span class="time">3 hrs</span>
-									</span>
-									<span class="message">
-									    This is awesome dashboard templates
-									</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="photo"><img src="img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Dulal Khan</span>
-									<span class="time">Just now</span>
-									</span>
-									<span class="message">
-									    Hello, this is an example messages please check
-									</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">See all messages</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- END INBOX DROPDOWN -->
-                        <!-- BEGIN NOTIFICATION DROPDOWN -->
-                        <li class="dropdown" id="header_notification_bar">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                                <i class="icon-bell-alt"></i>
-                                <span class="badge badge-warning">7</span>
-                            </a>
-                            <ul class="dropdown-menu extended notification">
-                                <li>
-                                    <p>You have 7 new notifications</p>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-important"><i class="icon-bolt"></i></span>
-                                        Server #3 overloaded.
-                                        <span class="small italic">34 mins</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-warning"><i class="icon-bell"></i></span>
-                                        Server #10 not respoding.
-                                        <span class="small italic">1 Hours</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-important"><i class="icon-bolt"></i></span>
-                                        Database overloaded 24%.
-                                        <span class="small italic">4 hrs</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-success"><i class="icon-plus"></i></span>
-                                        New user registered.
-                                        <span class="small italic">Just now</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                                        Application error.
-                                        <span class="small italic">10 mins</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">See all notifications</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- END NOTIFICATION DROPDOWN -->
-
-                    </ul>
-                </div>
-                <!-- END  NOTIFICATION -->
-                <div class="top-nav ">
-                    <ul class="nav pull-right top-menu" >
-                        <!-- BEGIN SUPPORT -->
-                        <li class="dropdown mtop5">
-
-                            <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Chat">
-                                <i class="icon-comments-alt"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown mtop5">
-                            <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Help">
-                                <i class="icon-headphones"></i>
-                            </a>
-                        </li>
-                        <!-- END SUPPORT -->
-                        <!-- BEGIN USER LOGIN DROPDOWN -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="img/avatar1_small.jpg" alt="">
-                                <span class="username">Mosaddek Hossain</span>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
-                                <li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
-                                <li><a href="#"><i class="icon-calendar"></i> Calendar</a></li>
-                                <li class="divider"></li>
-                                <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
-                            </ul>
-                        </li>
-                        <!-- END USER LOGIN DROPDOWN -->
-                    </ul>
-                    <!-- END TOP NAVIGATION MENU -->
-                </div>
-            </div>
-        </div>
-        <!-- END TOP NAVIGATION BAR -->
-    </div>
-	<!-- END HEADER -->
-	<!-- BEGIN CONTAINER -->
-	<div id="container" class="row-fluid">
-		<!-- BEGIN SIDEBAR -->
-		<div id="sidebar" class="nav-collapse collapse">
-
-			<div class="sidebar-toggler hidden-phone"></div>	
-
-			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-			<div class="navbar-inverse">
-				<form class="navbar-search visible-phone">
-					<input type="text" class="search-query" placeholder="Search" />
-				</form>
-			</div>
-			<!-- END RESPONSIVE QUICK SEARCH FORM -->
-			<!-- BEGIN SIDEBAR MENU -->
-            <ul class="sidebar-menu">
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"> <i class="icon-dashboard"></i></span> Dashboard
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="index.html">Dashboard 1</a></li>
-                        <li><a class="" href="index_2.html">Dashboard 2</a></li>
-
-                    </ul>
-                </li>
-                <li class="has-sub active">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"> <i class="icon-book"></i></span> UI Elements
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li class="active"><a class="" href="ui_elements_general.html">General</a></li>
-                        <li><a class="" href="ui_elements_buttons.html">Buttons</a></li>
-
-                        <li><a class="" href="ui_elements_tabs_accordions.html">Tabs & Accordions</a></li>
-                        <li><a class="" href="ui_elements_typography.html">Typography</a></li>
-                        <li><a class="" href="tree_view.html">Tree View</a></li>
-                        <li><a class="" href="nestable.html">Nestable List</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"><i class="icon-cogs"></i></span> Components
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="calendar.html">Calendar</a></li>
-                        <li><a class="" href="data_table.html">Data Table</a></li>
-                        <li><a class="" href="grids.html">Grids</a></li>
-                        <li><a class="" href="charts.html">Visual Charts</a></li>
-                        <li><a class="" href="messengers.html">Conversations</a></li>
-                        <li><a class="" href="gallery.html"> Gallery</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"><i class="icon-tasks"></i></span> Form Stuff
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="form_layout.html">Form Layouts</a></li>
-                        <li><a class="" href="form_component.html">Form Components</a></li>
-                        <li><a class="" href="form_wizard.html">Form Wizard</a></li>
-                        <li><a class="" href="form_validation.html">Form Validation</a></li>
-                        <li><a class="" href="dropzone.html">Dropzone File Upload </a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"><i class="icon-fire"></i></span> Icons
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="font_awesome.html">Font Awesome</a></li>
-                        <li><a class="" href="glyphicons.html">Glyphicons</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"><i class="icon-map-marker"></i></span> Maps
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="maps_google.html"> Google Maps</a></li>
-                        <li><a class="" href="maps_vector.html"> Vector Maps</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"><i class="icon-file-alt"></i></span> Sample Pages
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="blank.html">Blank Page</a></li>
-                        <li><a class="" href="sidebar_closed.html">Sidebar Closed Page</a></li>
-                        <li><a class="" href="coming_soon.html">Coming Soon</a></li>
-                        <li><a class="" href="blog.html">Blog</a></li>
-                        <li><a class="" href="about_us.html">About Us</a></li>
-                        <li><a class="" href="contact_us.html">Contact Us</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <span class="icon-box"><i class="icon-glass"></i></span> Extra
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="lock.html">Lock Screen</a></li>
-                        <li><a class="" href="profile.html">Profile</a></li>
-                        <li><a class="" href="invoice.html">Invoice</a></li>
-                        <li><a class="" href="pricing_tables.html">Pricing Tables</a></li>
-                        <li><a class="" href="faq.html">FAQ</a></li>
-                        <li><a class="" href="404.html">404 Error</a></li>
-                        <li><a class="" href="500.html">500 Error</a></li>
-                    </ul>
-                </li>
-                <li><a class="" href="login.html"><span class="icon-box"><i class="icon-user"></i></span> Login Page</a></li>
-            </ul>
-			<!-- END SIDEBAR MENU -->
-		</div>
-		<!-- END SIDEBAR -->
-		<!-- BEGIN PAGE -->
 		<div id="main-content">
             <!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
@@ -978,48 +666,48 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="nav nav-pills list_items">
-                                        <li><img src="assets/pre-loader/Whirlpool.gif" alt="Whirlpool"></li>
-                                        <li><img src="assets/pre-loader/Broken ring.gif" alt="Broken ring"></li>
-                                        <li><img src="assets/pre-loader/Storm.gif" alt="Storm"></li>
-                                        <li><img src="assets/pre-loader/Twirl.gif" alt="Twirl"></li>
-                                        <li><img src="assets/pre-loader/Snow with rain.gif" alt="Snow with rain"></li>
-                                        <li><img src="assets/pre-loader/Atom.gif" alt="Atom"></li>
-                                        <li><img src="assets/pre-loader/Nuclear alert.gif" alt="Nuclear alert"></li>
-                                        <li><img src="assets/pre-loader/Radar.gif" alt="Radar"></li>
-                                        <li><img src="assets/pre-loader/Kaleidoscope.gif" alt="Kaleidoscope"></li>
-                                        <li><img src="assets/pre-loader/Spinning spiral.gif" alt="Spinning spiral"></li>
-                                        <li><img src="assets/pre-loader/3D snake.gif" alt="3D snake"></li>
-                                        <li><img src="assets/pre-loader/Surrounded segments.gif" alt="Surrounded segments"></li>
-                                        <li><img src="assets/pre-loader/Pie chart.gif" alt="Pie chart"></li>
-                                        <li><img src="assets/pre-loader/Searching.gif" alt="Searching"></li>
-                                        <li><img src="assets/pre-loader/Water ripples.gif" alt="Water ripples"></li>
-                                        <li><img src="assets/pre-loader/Drawing flower.gif" alt="Drawing flower"></li>
-                                        <li><img src="assets/pre-loader/Spider web.gif" alt="Spider web"></li>
-                                        <li><img src="assets/pre-loader/Sun.gif" alt="Sun"></li>
-                                        <li><img src="assets/pre-loader/Rounded blocks.gif" alt="Rounded blocks"></li>
-                                        <li><img src="assets/pre-loader/Thin fading line.gif" alt="Thin fading line"></li>
-                                        <li><img src="assets/pre-loader/Snakes chasing.gif" alt="Snakes chasing"></li>
-                                        <li><img src="assets/pre-loader/Thin broken ring.gif" alt="Thin broken ring"></li>
-                                        <li><img src="assets/pre-loader/Triangles indicator.gif" alt="Triangles indicator"></li>
-                                        <li><img src="assets/pre-loader/Snake.gif" alt="Snake"></li>
-                                        <li><img src="assets/pre-loader/Fading squares.gif" alt="Fading squares"></li>
-                                        <li><img src="assets/pre-loader/Spinning line.gif" alt="Spinning line"></li>
-                                        <li><img src="assets/pre-loader/Velocity.gif" alt="Velocity"></li>
-                                        <li><img src="assets/pre-loader/Ovals in circle.gif" alt="Ovals in circle"></li>
-                                        <li><img src="assets/pre-loader/Rounded stripes.gif" alt="Rounded stripes"></li>
-                                        <li><img src="assets/pre-loader/Search with arrow.gif" alt="Search with arrow"></li>
-                                        <li><img src="assets/pre-loader/Ventilator.gif" alt="Ventilator"></li>
-                                        <li><img src="assets/pre-loader/preview.gif" alt="preview"></li>
-                                        <li><img src="assets/pre-loader/Clock with hands.gif" alt="Clock with hands"></li>
-                                        <li><img src="assets/pre-loader/preview2.gif" alt="preview2"></li>
-                                        <li><img src="assets/pre-loader/3D coffee cup.gif" alt="3D coffee cup"></li>
-                                        <li><img src="assets/pre-loader/Hourglass.gif" alt="Hourglass"></li>
-                                        <li><img src="assets/pre-loader/Tree on wind.gif" alt="Tree on wind"></li>
-                                        <li><img src="assets/pre-loader/preview3.gif" alt="preview3"></li>
-                                        <li><img src="assets/pre-loader/Bouncing ball.gif" alt="Bouncing ball"></li>
-                                        <li><img src="assets/pre-loader/Linear star.gif" alt="Linear star"></li>
-                                        <li><img src="assets/pre-loader/Fancy pants.gif" alt="Fancy pants"></li>
-                                        <li><img src="assets/pre-loader/Drink in glass.gif" alt="Drink in glass"></li>
+                                        <li><img src="public/assets/pre-loader/Whirlpool.gif" alt="Whirlpool"></li>
+                                        <li><img src="public/assets/pre-loader/Broken ring.gif" alt="Broken ring"></li>
+                                        <li><img src="public/assets/pre-loader/Storm.gif" alt="Storm"></li>
+                                        <li><img src="public/assets/pre-loader/Twirl.gif" alt="Twirl"></li>
+                                        <li><img src="public/assets/pre-loader/Snow with rain.gif" alt="Snow with rain"></li>
+                                        <li><img src="public/assets/pre-loader/Atom.gif" alt="Atom"></li>
+                                        <li><img src="public/assets/pre-loader/Nuclear alert.gif" alt="Nuclear alert"></li>
+                                        <li><img src="public/assets/pre-loader/Radar.gif" alt="Radar"></li>
+                                        <li><img src="public/assets/pre-loader/Kaleidoscope.gif" alt="Kaleidoscope"></li>
+                                        <li><img src="public/assets/pre-loader/Spinning spiral.gif" alt="Spinning spiral"></li>
+                                        <li><img src="public/assets/pre-loader/3D snake.gif" alt="3D snake"></li>
+                                        <li><img src="public/assets/pre-loader/Surrounded segments.gif" alt="Surrounded segments"></li>
+                                        <li><img src="public/assets/pre-loader/Pie chart.gif" alt="Pie chart"></li>
+                                        <li><img src="public/assets/pre-loader/Searching.gif" alt="Searching"></li>
+                                        <li><img src="public/assets/pre-loader/Water ripples.gif" alt="Water ripples"></li>
+                                        <li><img src="public/assets/pre-loader/Drawing flower.gif" alt="Drawing flower"></li>
+                                        <li><img src="public/assets/pre-loader/Spider web.gif" alt="Spider web"></li>
+                                        <li><img src="public/assets/pre-loader/Sun.gif" alt="Sun"></li>
+                                        <li><img src="public/assets/pre-loader/Rounded blocks.gif" alt="Rounded blocks"></li>
+                                        <li><img src="public/assets/pre-loader/Thin fading line.gif" alt="Thin fading line"></li>
+                                        <li><img src="public/assets/pre-loader/Snakes chasing.gif" alt="Snakes chasing"></li>
+                                        <li><img src="public/assets/pre-loader/Thin broken ring.gif" alt="Thin broken ring"></li>
+                                        <li><img src="public/assets/pre-loader/Triangles indicator.gif" alt="Triangles indicator"></li>
+                                        <li><img src="public/assets/pre-loader/Snake.gif" alt="Snake"></li>
+                                        <li><img src="public/assets/pre-loader/Fading squares.gif" alt="Fading squares"></li>
+                                        <li><img src="public/assets/pre-loader/Spinning line.gif" alt="Spinning line"></li>
+                                        <li><img src="public/assets/pre-loader/Velocity.gif" alt="Velocity"></li>
+                                        <li><img src="public/assets/pre-loader/Ovals in circle.gif" alt="Ovals in circle"></li>
+                                        <li><img src="public/assets/pre-loader/Rounded stripes.gif" alt="Rounded stripes"></li>
+                                        <li><img src="public/assets/pre-loader/Search with arrow.gif" alt="Search with arrow"></li>
+                                        <li><img src="public/assets/pre-loader/Ventilator.gif" alt="Ventilator"></li>
+                                        <li><img src="public/assets/pre-loader/preview.gif" alt="preview"></li>
+                                        <li><img src="public/assets/pre-loader/Clock with hands.gif" alt="Clock with hands"></li>
+                                        <li><img src="public/assets/pre-loader/preview2.gif" alt="preview2"></li>
+                                        <li><img src="public/assets/pre-loader/3D coffee cup.gif" alt="3D coffee cup"></li>
+                                        <li><img src="public/assets/pre-loader/Hourglass.gif" alt="Hourglass"></li>
+                                        <li><img src="public/assets/pre-loader/Tree on wind.gif" alt="Tree on wind"></li>
+                                        <li><img src="public/assets/pre-loader/preview3.gif" alt="preview3"></li>
+                                        <li><img src="public/assets/pre-loader/Bouncing ball.gif" alt="Bouncing ball"></li>
+                                        <li><img src="public/assets/pre-loader/Linear star.gif" alt="Linear star"></li>
+                                        <li><img src="public/assets/pre-loader/Fancy pants.gif" alt="Fancy pants"></li>
+                                        <li><img src="public/assets/pre-loader/Drink in glass.gif" alt="Drink in glass"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1033,50 +721,5 @@
 			</div>
 			<!-- END PAGE CONTAINER-->			
 		</div>
-		<!-- BEGIN PAGE -->	 	
-	</div>
-	<!-- END CONTAINER -->
-	<!-- BEGIN FOOTER -->
-	<div id="footer">
-        2013 &copy; Admin Lab Dashboard. 更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a>
-		<div class="span pull-right">
-			<span class="go-top"><i class="icon-arrow-up"></i></span>
-		</div>
-	</div>
-	<!-- END FOOTER -->
-	<!-- BEGIN JAVASCRIPTS -->
-	<!-- Load javascripts at bottom, this will reduce page load time -->
-	<script src="js/jquery-1.8.3.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/jquery.blockui.js"></script>
-	<!-- ie8 fixes -->
-	<!--[if lt IE 9]>
-	<script src="js/excanvas.js"></script>
-	<script src="js/respond.js"></script>
-	<![endif]-->
-	<script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script>
-	<script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
-	<script type="text/javascript" src="js/jquery.pulsate.min.js"></script>
-	<script src="assets/fancybox/source/jquery.fancybox.pack.js"></script>
-
-    <!-- jquery slider -->
-    <script type="text/javascript" src="assets/jslider/js/jshashtable-2.1_src.js"></script>
-    <script type="text/javascript" src="assets/jslider/js/jquery.numberformatter-1.2.3.js"></script>
-    <script type="text/javascript" src="assets/jslider/js/tmpl.js"></script>
-    <script type="text/javascript" src="assets/jslider/js/jquery.dependClass-0.1.js"></script>
-    <script type="text/javascript" src="assets/jslider/js/draggable-0.1.js"></script>
-    <script type="text/javascript" src="assets/jslider/js/jquery.slider.js"></script>
-    <!-- end -->
-
-	<script src="js/scripts.js"></script>
-
-	<script>
-		jQuery(document).ready(function() {
-			// initiate layout and plugins
-			App.init();
-		});
-	</script>
-	<!-- END JAVASCRIPTS -->
-</body>
-<!-- END BODY -->
-</html>
+    
+	

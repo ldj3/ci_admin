@@ -1,31 +1,4 @@
-<li class="has-sub">
-					<a href="javascript:;" class="">
-					    <span class="icon-box"> <i class="icon-book"></i></span> UI Elements
-					    <span class="arrow"></span>
-					</a>
-					<ul class="sub">
-						<li><a class="" href="ui_elements_general.html">General</a></li>
-						<li><a class="" href="ui_elements_buttons.html">Buttons</a></li>
-						<li><a class="" href="ui_elements_tabs_accordions.html">Tabs & Accordions</a></li>
-						<li><a class="" href="ui_elements_typography.html">Typography</a></li>
-						<li><a class="" href="tree_view.html">Tree View</a></li>
-						<li><a class="" href="nestable.html">Nestable List</a></li>
-					</ul>
-				</li>
-				<li class="has-sub">
-					<a href="javascript:;" class="">
-					<span class="icon-box"><i class="icon-cogs"></i></span> Components
-					<span class="arrow"></span>
-					</a>
-					<ul class="sub">
-                        <li><a class="" href="calendar.html">Calendar</a></li>
-                        <li><a class="" href="data_table.html">Data Table</a></li>
-                        <li><a class="" href="grids.html">Grids</a></li>
-                        <li><a class="" href="charts.html">Visual Charts</a></li>
-                        <li><a class="" href="messengers.html">Conversations</a></li>
-                        <li><a class="" href="gallery.html"> Gallery</a></li>
-                    </ul>
-				</li>
+
                 <li class="has-sub">
                     <a href="javascript:;" class="">
                         <span class="icon-box"><i class="icon-tasks"></i></span> Form Stuff
