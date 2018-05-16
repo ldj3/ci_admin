@@ -391,7 +391,7 @@ var App = function () {
             var time_str = time.toString('MMM dd, yyyy HH:MM');
             var tpl = '';
             tpl += '<li class="out">';
-            tpl += '<img class="avatar" alt="" src="img/avatar1.jpg"/>';
+            tpl += '<img class="avatar" alt="" src="public/img/avatar1.jpg"/>';
             tpl += '<div class="message">';
             tpl += '<span class="arrow"></span>';
             tpl += '<a href="#" class="name">Sumon Ahmed</a>&nbsp;';
@@ -1345,7 +1345,7 @@ var App = function () {
         });
 
         var setColor = function (color) {
-            $('#style_color').attr("href", "css/style_" + color + ".css");
+            $('#style_color').attr("href", "public/css/style_" + color + ".css");
         }
 
     }

@@ -33,6 +33,15 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
+		// 获取session数据
+		$session_data = $this->session->userdata();
+
+		// 判断是否登录
+		if (!empty($session_data['user_name'])) 
+		{
+			redirect('home/index');
+		}
+
 		$data['base_url'] = base_url();
 		$data['title'] = '用户登录';
 		$this->load->view('login/login',$data);
@@ -45,6 +54,10 @@ class Login extends CI_Controller {
 	public function dologin() 
 	{
 		
+		// 加载ip_position类
+		$this->load->helper("ip_position");
+		// 加载日志模块
+		$this->load->model('Log_mdl');
 		//加载加密
 		$this->load->library('user_password');
 		//加载用户seesion
@@ -86,6 +99,22 @@ class Login extends CI_Controller {
 
 			//验证成功，开启session
 			set_customer($data_value);
+
+			$session_data = $this->session->userdata();
+			// 操作日志
+			$data['user_name'] = $session_data['user_name'];
+			$data['user_agent'] = $this->input->user_agent();
+			$data['ip_address'] = $this->input->ip_address();
+			$data['created_at'] = date("Y-m-d H:i:s");
+			$data['status'] = 1;
+			$ip_position = get_position($data['ip_address']);
+			if ($ip_position['code'] == 0) {
+				$data['position'] = $ip_position['data']['country'].$ip_position['data']['region'].$ip_position['data']['city'].$ip_position['data']['isp'];
+			}
+			$this->Log_mdl->create_login($data);
+			
+			// 删除登录缓存
+			$this->db->cache_delete('login', 'dologin');
 			echo json_encode($data);exit;
 		}else {
 			$data['code'] = '3';
@@ -101,6 +130,33 @@ class Login extends CI_Controller {
 	 */
 	public function log_out()
 	{
+
+		// 加载ip_position类
+		$this->load->helper("ip_position");
+		// 加载日志模块
+		$this->load->model('Log_mdl');
+		//加载加密
+		$this->load->library('user_password');
+		//加载用户seesion
+		$this->load->helper("session");
+
+		// 清除缓存
+		$this->db->cache_delete_all();
+
+		
+		$session_data = $this->session->userdata();
+		// 操作日志
+		$data['user_name'] = $session_data['user_name'];
+		$data['user_agent'] = $this->input->user_agent();
+		$data['ip_address'] = $this->input->ip_address();
+		$data['created_at'] = date("Y-m-d H:i:s");
+		$data['status'] = 0;
+		$ip_position = get_position($data['ip_address']);
+		if ($ip_position['code'] == 0) {
+			$data['position'] = $ip_position['data']['country'].$ip_position['data']['region'].$ip_position['data']['city'].$ip_position['data']['isp'];
+		}
+		$this->Log_mdl->create_login($data);
+
 		$this->session->sess_destroy();
 		$data['base_url'] = base_url();
 		$data['title'] = '用户登录';

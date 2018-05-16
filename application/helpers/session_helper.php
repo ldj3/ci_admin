@@ -12,7 +12,7 @@ function set_customer($data){
     $CI->load->library('session');
 
     $user_info = array(
-            'user_name'=>$data['id'], //用户ID
+            'user_id'=>$data['id'], //用户ID
             'user_name'=>$data['name'], //用户名称
             'user_phone'=>$data['phone'], //用户手机号
             'user_ip'=>$data['IP'], //用户IP地址

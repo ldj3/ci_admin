@@ -11,20 +11,20 @@
   <meta content="" name="description" />
   <meta content="" name="author" />
 
-  <link href="assets/coming_soon/demo/css/style.css" rel="stylesheet">
+  <link href="public/assets/coming_soon/demo/css/style.css" rel="stylesheet">
 
-  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/style_responsive.css" rel="stylesheet" />
-  <link href="css/style_default.css" rel="stylesheet" id="style_color" />
+  <link href="public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="public/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="public/css/style.css" rel="stylesheet" />
+  <link href="public/css/style_responsive.css" rel="stylesheet" />
+  <link href="public/css/style_default.css" rel="stylesheet" id="style_color" />
 
 
 
   <!-- jQuery and Modernizr-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
 
-  <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'> -->
 
 
 
@@ -34,8 +34,8 @@
 <body id="coming-body">
   <div class="lock-header">
       <!-- BEGIN LOGO -->
-      <a href="index.html" id="logo" class="center">
-          <img src="img/logo.png" alt="logo" class="center" />
+      <a href="index.php/home" id="logo" class="center">
+          <img src="public/img/logo.png" alt="logo" class="center" />
       </a>
       <!-- END LOGO -->
   </div>
@@ -83,19 +83,19 @@
                   <br>
                   <div class="social">
                       <ul class="icons clearfix">
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/youtube.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/yahoo.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/vimeo.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/twitter.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/stumbleupon.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/skype.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/picasa.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/myspace.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/linkedin.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/google-plus.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/flickr.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/facebook.png" alt="" /></a></li>
-                          <li><a href="javascript:;"><img src="assets/coming_soon/demo/img/social/blogger.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/youtube.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/yahoo.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/vimeo.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/twitter.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/stumbleupon.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/skype.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/picasa.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/myspace.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/linkedin.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/google-plus.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/flickr.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/facebook.png" alt="" /></a></li>
+                          <li><a href="javascript:;"><img src="public/assets/coming_soon/demo/img/social/blogger.png" alt="" /></a></li>
                       </ul>
                   </div>
               </div>

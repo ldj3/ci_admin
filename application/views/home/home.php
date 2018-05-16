@@ -8,12 +8,6 @@
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 </head>
-	<!-- BEGIN HEADER -->
-	
-    
-
-		<!-- END SIDEBAR -->
-		<!-- BEGIN PAGE -->
 		<div id="main-content">
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">

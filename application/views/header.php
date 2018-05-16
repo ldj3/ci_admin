@@ -13,8 +13,6 @@
 	<link href="public/assets/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
 	<link href="public/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
 	<link href="public/assets/jqvmap/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
-
-
 </head>
 <body class="fixed-top">
 
@@ -24,7 +22,7 @@
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<!-- BEGIN LOGO -->
-				<a class="brand" href="index.html">
+				<a class="brand" href="index.php">
 				    <img src="public/img/logo.png" alt="Admin Lab" />
 				</a>
 				<!-- END LOGO -->
@@ -189,9 +187,9 @@
 							<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
-								<li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
-								<li><a href="#"><i class="icon-calendar"></i> Calendar</a></li>
+								<li><a href="<?php echo $site_url ?>/home/profile"><i class="icon-user"></i> My Profile</a></li>
+								<li><a href="<?php echo $site_url ?>/home/typography"><i class="icon-tasks"></i> My Tasks</a></li>
+								<li><a href="<?php echo $site_url ?>/home/calendar"><i class="icon-calendar"></i> Calendar</a></li>
 								<li class="divider"></li>
 								<li><a href="<?php echo $site_url ?>/login/log_out"><i class="icon-key"></i> Log Out</a></li>
 							</ul>

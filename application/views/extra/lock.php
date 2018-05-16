@@ -16,19 +16,26 @@ Website: http://thevectorlab.net/
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="" name="description" />
   <meta content="" name="author" />
-  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/style_responsive.css" rel="stylesheet" />
-  <link href="css/style_default.css" rel="stylesheet" id="style_color" />
+  <link href="public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="public/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="public/css/style.css" rel="stylesheet" />
+  <link href="public/css/style_responsive.css" rel="stylesheet" />
+  <link href="public/css/style_default.css" rel="stylesheet" id="style_color" />
+  <script src="public/js/jquery-1.8.3.min.js"></script>
+  <script src="public/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="public/js/jquery.blockui.js"></script>
+  <script src="public/js/scripts.js"></script>
+  <script>
+    jQuery(document).ready(function() {     
+      App.initLOCK();
+    });
+  </script>
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
 <body id="lock-body">
   <div class="lock-header">
       <!-- BEGIN LOGO -->
-      <a href="index.html" id="logo" class="center">
-          <img src="img/logo.png" alt="logo" class="center" />
+      <a href="index.php/home" id="logo" class="center">
+          <img src="public/img/logo.png" alt="logo" class="center" />
       </a>
       <!-- END LOGO -->
   </div>
@@ -64,23 +71,4 @@ Website: http://thevectorlab.net/
     <!-- END LOCK FORM -->        
     
   </div>
-  <!-- END LOCK -->
-  <!-- BEGIN COPYRIGHT -->
-  <div id="login-copyright">
-      2013 &copy; Admin Lab Dashboard. 更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a>
-  </div>
-  <!-- END COPYRIGHT -->
-  <!-- BEGIN JAVASCRIPTS -->
-  <script src="js/jquery-1.8.3.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/jquery.blockui.js"></script>
-  <script src="js/scripts.js"></script>
-  <script>
-    jQuery(document).ready(function() {     
-      App.initLOCK();
-    });
-  </script>
-  <!-- END JAVASCRIPTS -->
-</body>
-<!-- END BODY -->
-</html>
+  
